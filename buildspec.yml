@@ -1,6 +1,15 @@
 version: 0.1
-
+env:
+  parameter-store:
+    SNYK_AUTH_TOKEN: "snyk_key"
 phases:
+  pre_build:
+    commands:
+      - echo installing snyk
+      - PWD=$(pwd)
+      - PWDUTILS=$(pwd)
+      - curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.210.0/snyk-linux"
+      - chmod -R +x ./snyk
   build:
     commands:
       - echo Build completed on `date`
