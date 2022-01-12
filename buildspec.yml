@@ -6,14 +6,15 @@ phases:
   pre_build:
     commands:
       - echo installing snyk
-      - SNYK_TOKEN2="wtf${SNYK_AUTH_TOKEN2}"
       - PWD=$(pwd)
       - curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.210.0/snyk-linux"
       - chmod -R +x ./snyk
-      - printenv
+
   build:
     commands:
       - echo commencing vulnerability scanning
+      - ./snyk test --severity-threshold=medium
+      - ./snyk monitor
       - echo Build completed on `date`
 
 artifacts:
