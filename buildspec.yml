@@ -11,6 +11,7 @@ phases:
       - curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.210.0/snyk-linux"
       - chmod -R +x ./snyk
       - echo $SNYK_TOKEN
+      - echo $SNYK_AUTH_TOKEN
   build:
     commands:
       - echo commencing vulnerability scanning
