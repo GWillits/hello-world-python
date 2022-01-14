@@ -1,2 +1,2 @@
 flask
-ansible== 4.7.0
+ansible==4.7.0
