@@ -1,1 +1,2 @@
 flask
+ansible== 4.7.0
