@@ -110,3 +110,5 @@ terraform.log
 .tfplan.out
 .tfplan.exit
 terraform/.terraform.lock.hcl
+sonar-scanner/
+.scannerwork/

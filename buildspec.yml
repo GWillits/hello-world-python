@@ -3,24 +3,27 @@ env:
   parameter-store:
     SONAR_TOKEN: "sonar_test_token"
     SONAR_KEY: "sonar_test_key"
+    variables:
+      PROJECT_NAME: "gw-test-hello-world"
+      ORGANIZATION_NAME: "gwillits"
 phases:
+install:
+  runtime-versions:
+    java: openjdk11
   pre_build:
-    commands:
-      - echo installing snyk
-      - apt-get update
-      - apt-get install -y jq
-      - wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
-      - tar xzf apache-maven-3.5.4-bin.tar.gz
-      - ln -s apache-maven-3.5.4 maven
-      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
-      - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
-      - export PATH=$PATH:/sonar-scanner-3.3.0.1492-linux/bin/
+  commands:
+    - echo installing snyk
+    - apt-get update
+    - apt-get install -y jq
+    - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip -O sonar-scanner.zip
+    - unzip ./sonar-scanner.zip
+    - export PATH=$PATH:/sonar-scanner/bin/
+    - echo $PATH
 
   build:
     commands:
       - echo commencing vulnerability scanning
-      - ./snyk test --severity-threshold=medium
-      - ./snyk monitor
+
       - echo Build completed on `date`
 
 artifacts:
