@@ -26,8 +26,10 @@ jobs:
           python-version: "3.9"
       - name: install poetry
         run: make install-poetry
-      - name: install dependencies
-        run: |
-          make install-ci
+      # - name: install dependencies
+      #   run: |
+      #     make install-ci
       - name: python-safety
-        run: poetry run safety check --full-report
+        run: |
+          . .venv/bin/activate
+          safety check --full-report
