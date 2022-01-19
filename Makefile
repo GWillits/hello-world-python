@@ -14,4 +14,5 @@ install-ci:
 	poetry run pip list
 
 safety-ci:
+	. .venv/bin/activate
 	@echo "$(shell sh -c 'poetry run safety check --$(SAFETY_OUTPUT)')"
