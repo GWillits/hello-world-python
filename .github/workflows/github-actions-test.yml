@@ -30,4 +30,4 @@ jobs:
         run: |
           make install-ci
       - name: python-safety
-        run: scripts/safety-scan.sh
+        run: poetry run safety check --full-report
