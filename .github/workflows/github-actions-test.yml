@@ -29,5 +29,5 @@ jobs:
       - name: install dependencies
         run: |
           make install-ci
-      - name: safety check
-        run: make safety-ci
+      - name: python-safety
+        run: scripts/safety-scan.sh

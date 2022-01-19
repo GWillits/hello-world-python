@@ -1,3 +1,5 @@
+SAFETY_OUTPUT := "bare"
+
 install:
 	poetry install --remove-untracked
 
@@ -12,5 +14,4 @@ install-ci:
 	poetry run pip list
 
 safety-ci:
-	$(eval OUTPUT=$(shell sh -c "poetry run safety check --bare"))
-	echo "${OUTPUT}"
+	@echo "$(shell sh -c 'poetry run safety check --$(SAFETY_OUTPUT)')"
