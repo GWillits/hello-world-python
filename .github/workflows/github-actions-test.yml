@@ -28,3 +28,5 @@ jobs:
         run: make install-poetry
       - name: install dependencies
         run: make install-ci
+      - name: safety check
+        run: make safety-check

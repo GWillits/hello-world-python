@@ -8,3 +8,6 @@ install-poetry:
 install-ci:
 	poetry install --no-dev --remove-untracked
 	pip list
+
+safety-check:
+	poetry run safety check --bare
