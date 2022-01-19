@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "hello-world-python"
+version = "0.1.0"
+description = ""
+authors = ["Garry Willits <garry.willits@mail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.5"
+flask  = "*"
+ansible = "^4.7.0"
+safety = "^1.10.3"
