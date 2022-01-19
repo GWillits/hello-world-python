@@ -6,8 +6,9 @@ install-poetry:
 	python3 -m pip install --user poetry
 
 install-ci:
-	. .venv/bin/activate
+	
 	poetry install --no-dev --remove-untracked
+	. .venv/bin/activate
 	poetry run pip list
 
 safety-check:
