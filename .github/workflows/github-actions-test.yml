@@ -32,4 +32,4 @@ jobs:
       - name: python-safety
         run: |
           . .venv/bin/activate
-          safety check --full-report
+          poetry run safety check --full-report
