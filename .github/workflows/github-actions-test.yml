@@ -30,4 +30,4 @@ jobs:
         run: |
           make install-ci
       - name: safety check
-        run: safety check --bare
+        run: make safety-ci

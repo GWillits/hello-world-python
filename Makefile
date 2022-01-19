@@ -11,5 +11,6 @@ install-ci:
 	. .venv/bin/activate
 	poetry run pip list
 
-safety-check:
-	poetry run safety check --bare
+safety-ci:
+	$(eval OUTPUT=$(shell sh -c "poetry run safety check --bare"))
+	echo "${OUTPUT}"
