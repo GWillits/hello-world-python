@@ -30,6 +30,4 @@ jobs:
         run: |
           make install-ci
       - name: python-safety
-        run: |
-          . .venv/bin/activate
-          poetry run safety check --full-report
+        run: make safety

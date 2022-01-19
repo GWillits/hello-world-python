@@ -1,5 +1,3 @@
-SAFETY_OUTPUT := "bare"
-
 install:
 	poetry install --remove-untracked
 
@@ -13,6 +11,6 @@ install-ci:
 	. .venv/bin/activate
 	poetry run pip list
 
-safety-ci:
+safety:
 	. .venv/bin/activate
-	@echo "$(shell sh -c 'poetry run safety check --$(SAFETY_OUTPUT)')"
+	./scripts/safety-scan.sh 
