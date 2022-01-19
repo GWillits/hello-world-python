@@ -29,4 +29,4 @@ jobs:
       - name: install dependencies
         run: make install-ci
       - name: safety check
-        run: make safety-check
+        run: poetry run safety check --bare
