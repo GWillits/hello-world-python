@@ -31,5 +31,5 @@ jobs:
       #     make install-ci
       - name: python-safety
         run: |
-          . .venv/bin/activate
+          pip install safety
           safety check --full-report
