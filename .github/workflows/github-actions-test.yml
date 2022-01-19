@@ -27,6 +27,7 @@ jobs:
       - name: install poetry
         run: make install-poetry
       - name: install dependencies
-        run: make install-ci
+        run: |
+          make install-ci
       - name: safety check
         run: safety check --bare
