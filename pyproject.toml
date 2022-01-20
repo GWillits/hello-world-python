@@ -5,6 +5,6 @@ description = ""
 authors = ["Garry Willits <garry.willits@mail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.5"
-flask  = "*"
+python = "3.9.7"
+
 safety = "^1.10.3"
