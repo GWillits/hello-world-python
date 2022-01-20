@@ -18,3 +18,4 @@ Licensed under Apache 2.0. Please see [LICENSE](LICENSE) for details.
  1874  curl -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=test_token"
  1875  curl -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=test_token2"
  1876  sonar-scanner   -Dsonar.projectKey=test-project   -Dsonar.sources=.   -Dsonar.host.url=http://localhost:9000   -Dsonar.login=ea64baf53b160b2044efc1fa4341fa565ab7e262
+ cat insecure_report.json | jq --arg DATE "$(date +'%m/%d/%Y : %X')" --arg USER "Gaz" '. += [{origin:{usr: $USER,date: $DATE} }'] > test.json

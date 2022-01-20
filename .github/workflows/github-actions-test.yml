@@ -30,6 +30,6 @@ jobs:
         run: |
           make map-requirements
       - name: python-safety
-        run: make safety safety_action=$action
+        run: make safety safety_action=$action user="$(git log -n 1 --pretty=format:%an)"
         env:
           action: PASS
