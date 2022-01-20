@@ -15,6 +15,7 @@ map-requirements:
 	poetry export -f requirements.txt --output requirements.txt
 
 safety:
+	@pip install safety
 	@safety check -r requirements.txt --full-report
 	
 kkk:	
