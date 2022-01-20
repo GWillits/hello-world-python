@@ -15,6 +15,5 @@ map-requirements:
 	poetry export -f requirements.txt --output requirements.txt
 
 safety:
-	@. .venv/bin/activate 
 	@./scripts/safety-scan.sh ${safety_action}
 
