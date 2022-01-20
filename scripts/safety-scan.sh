@@ -1,10 +1,10 @@
 fail_action="${1:-"FAIL"}"
-report="$(poetry run safety check --bare)"
+report="$(safety check -r requirements.txt --bare)"
 num_results=$(echo -n "$report"| wc -w)
 if [ $(($num_results)) -gt 0 ]
 then
     echo  "$num_results package vulnerabilities discovered. Failing package scan test. Full report:"
-    poetry run safety check --full-report
+    safety check -r requirements.txt --full-report
     if [ "$fail_action" = "FAIL" ]
     then
         echo "failed"
