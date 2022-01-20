@@ -1,5 +1,5 @@
-ansible-core==2.11.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" \
-    --hash=sha256:b87188beacfac1bb6dc5cf65663f3c52e66e0f9990742db00a3dca71ebae2eee
+ansible-core==2.12.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" \
+    --hash=sha256:a4508707262be11bb4dd98a006f1b14817879a055e6b6c46ad9fca8894fb3073
 ansible==4.10.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0") \
     --hash=sha256:88af9479e81a3931bb3a1b8c4eeb252cd4f38c03daafd6a5aa120d6b0d70d45c
 certifi==2021.10.8; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5" \
