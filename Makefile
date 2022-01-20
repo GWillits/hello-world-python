@@ -12,5 +12,6 @@ install-ci:
 	poetry run pip list
 
 safety:
-	. .venv/bin/activate
-	./scripts/safety-scan.sh 
+	@. .venv/bin/activate 
+	@./scripts/safety-scan.sh ${safety_action}
+
