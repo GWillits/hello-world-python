@@ -12,7 +12,6 @@ install-ci:
 	poetry run pip list
 
 map-requirements:
-	. .venv/bin/activate
 	poetry export -f requirements.txt --output requirements.txt
 
 safety:
