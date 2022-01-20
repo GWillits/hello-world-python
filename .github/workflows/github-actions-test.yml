@@ -29,7 +29,7 @@ jobs:
       - name: install dependencies
         run: |
           make install-ci
-      - name: python-safety
-        run: make safety safety_action=$action
-        env:
-          action: PASS
+      # - name: python-safety
+      #   run: make safety safety_action=$action
+      #   env:
+      #     action: PASS
