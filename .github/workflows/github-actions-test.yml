@@ -41,5 +41,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{testfile}}
+          path: ${{ github.workspace }}/artifacts/**/*
           retention-days: 1

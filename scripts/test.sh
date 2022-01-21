@@ -1,3 +1,2 @@
-export testfile="testfile.txt"
-echo "testfile=${testfile}" >> $GITHUB_ENV
-echo "my test artifact " > $testfile
+mkdir -p ${{ github.workspace }}/artifacts
+echo hello > ${{ github.workspace }}/artifacts/world.txt
