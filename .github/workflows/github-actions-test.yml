@@ -37,4 +37,11 @@ jobs:
         run: |
           ./scripts/test.sh
 
-      - run: echo $FOO
+      - run: echo $testfile
+
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: "$testfile"
+          retention-days: 1
