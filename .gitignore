@@ -26,6 +26,7 @@ wheels/
 *.egg
 requirements.txt
 poetry.lock
+.github-artifacts
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

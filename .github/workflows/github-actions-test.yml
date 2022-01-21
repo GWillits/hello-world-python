@@ -20,26 +20,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      # - name: install poetry
-      #   run: make install-poetry
-      # - name: export requirements text
-      #   run: |
-      #     make map-requirements
-      # - name: python-safety
-      #   run: make safety-ci safety_action=$action user="$(git log -n 1 --pretty=format:%an)"
-      #   env:
-      #     action: PASS
-      - name: test
-        run: |
-          ./scripts/test.sh ${{ github.workspace }}
+
+      - name: install poetry
+        run: make install-poetry
+
+      - name: python-safety
+        run: make safety-ci safety_action=$action workspace=${{ github.workspace }}
+        env:
+          action: PASS
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{ github.workspace }}/artifacts/**/*
+          path: ${{ github.workspace }}/.github-artifacts/**/*
           retention-days: 1

@@ -12,11 +12,12 @@ install-ci:
 	poetry run pip list
 
 map-requirements:
-	poetry export -f requirements.txt --output requirements.txt
+	@if [ ! -f requirements.txt  ]; then poetry export -f requirements.txt --output requirements.txt; fi;
 
-safety:
+safety: map-requirements
 	@./scripts/safety-scan.sh ${safety_action}
-safety-ci:
+
+safety-ci: map-requirements
 	@pip install safety
-	@./scripts/safety-scan.sh ${safety_action}
+	@./scripts/safety-scan.sh ${safety_action} ${workspace}
 
