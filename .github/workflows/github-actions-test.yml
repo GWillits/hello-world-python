@@ -15,7 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  security:
+  security-scan:
     environment: dev
     runs-on: ubuntu-latest
     steps:
@@ -34,9 +34,9 @@ jobs:
         env:
           action: PASS
 
-      - name: "Upload Artifacts"
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
+          name: safety-report
           path: ${{ github.workspace }}/.github-artifacts/**/*
           retention-days: 1
