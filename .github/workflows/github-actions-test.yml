@@ -36,6 +36,6 @@ jobs:
       - name: test
         run: |
           export FOO=bar
-          echo "$FOO" >> $GITHUB_ENV
+          echo "FOO=${FOO}" >> $GITHUB_ENV
 
       - run: echo $FOO
