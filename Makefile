@@ -18,6 +18,6 @@ safety: map-requirements
 	@./scripts/safety-scan.sh ${safety_action}
 
 safety-ci: map-requirements
-	#@pip install safety && \
-	./scripts/safety-scan.sh ${safety_action} ${workspace}
+	@pip install safety
+	@./scripts/safety-scan.sh ${safety_action} ${workspace}
 

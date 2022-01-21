@@ -34,7 +34,7 @@ jobs:
         env:
           action: PASS
 
-      - name: "Upload Artifact"
+      - name: "Upload Artifacts"
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
