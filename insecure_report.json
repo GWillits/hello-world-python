@@ -1,90 +1,90 @@
-[
-  [
-    "ansible",
-    ">0",
-    "4.10.0",
-    "Ansible is vulnerable to CVE-2021-3532: A flaw was found in Ansible where the secret information present in async_files are getting disclosed when the user changes the jobdir to a world readable directory. Any secret information in an async status file will be readable by a malicious user on that system. This flaw also affects Ansible Tower 3.7 and Ansible Automation Platform 1.2.\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1956464",
-    "42923",
-    null,
-    null
-  ],
-  [
-    "cryptography",
-    "<3.3",
-    "3.2.1",
-    "Cryptography 3.3 no longer allows loading of finite field Diffie-Hellman parameters of less than 512 bits in length. This change is to conform with an upcoming OpenSSL release that no longer supports smaller sizes. These keys were already wildly insecure and should not have been used in any application outside of testing.",
-    "39252",
-    null,
-    null
-  ],
-  [
-    "cryptography",
-    "<3.3.2",
-    "3.2.1",
-    "In the cryptography package before 3.3.2 for Python, certain sequences of update calls to symmetrically encrypt multi-GB values could result in an integer overflow and buffer overflow, as demonstrated by the Fernet class. See: CVE-2020-36242.",
-    "39606",
-    null,
-    null
-  ],
-  [
-    "pyyaml",
-    "<5.4",
-    "5.3.1",
-    "Pyyaml version 5.4 includes a fix for CVE-2020-14343: A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1860466",
-    "39611",
-    null,
-    null
-  ],
-  [
-    "urllib3",
-    "<1.23",
-    "1.22",
-    "urllib3 before version 1.23 does not remove the Authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the Authorization header to be exposed to unintended hosts or transmitted in cleartext.",
-    "36541",
-    null,
-    null
-  ],
-  [
-    "urllib3",
-    "<1.24.2",
-    "1.22",
-    "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the ssl_context, ca_certs, or ca_certs_dir argument.",
-    "37071",
-    null,
-    null
-  ],
-  [
-    "urllib3",
-    "<1.25.9",
-    "1.22",
-    "urllib3 before 1.25.9 allows CRLF injection if the attacker controls the HTTP request method, as demonstrated by inserting CR and LF control characters in the first argument of putrequest(). NOTE: this is similar to CVE-2020-26116.",
-    "38834",
-    null,
-    null
-  ],
-  [
-    "urllib3",
-    "<=1.24.1",
-    "1.22",
-    "In the urllib3 library through 1.24.1 for Python, CRLF injection is possible if the attacker controls the request parameter.",
-    "37055",
-    null,
-    null
-  ],
-  [
-    "werkzeug",
-    "<2.0.2",
-    "1.0.1",
-    "Werkzeug version 2.0.2 improves the security of the debugger cookies. \"SameSite\" attribute is set to \"Strict\" instead of \"None\", and the secure flag is added when on HTTPS.",
-    "42050",
-    null,
-    null
-  ],
-  {
-    "origin": {
-      "usr": "garry.willits",
-      "email": "garry.willits@nhs.net",
-      "date": "01/20/2022 : 16:15:48"
-    }
-  }
-]
+{
+  "origin": {
+    "usr": "garry.willits",
+    "email": "garry.willits@nhs.net",
+    "date": "01/21/2022 : 11:02:18"
+  },
+  "report": [
+    [
+      "ansible",
+      ">0",
+      "4.10.0",
+      "Ansible is vulnerable to CVE-2021-3532: A flaw was found in Ansible where the secret information present in async_files are getting disclosed when the user changes the jobdir to a world readable directory. Any secret information in an async status file will be readable by a malicious user on that system. This flaw also affects Ansible Tower 3.7 and Ansible Automation Platform 1.2.\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1956464",
+      "42923",
+      null,
+      null
+    ],
+    [
+      "cryptography",
+      "<3.3",
+      "3.2.1",
+      "Cryptography 3.3 no longer allows loading of finite field Diffie-Hellman parameters of less than 512 bits in length. This change is to conform with an upcoming OpenSSL release that no longer supports smaller sizes. These keys were already wildly insecure and should not have been used in any application outside of testing.",
+      "39252",
+      null,
+      null
+    ],
+    [
+      "cryptography",
+      "<3.3.2",
+      "3.2.1",
+      "In the cryptography package before 3.3.2 for Python, certain sequences of update calls to symmetrically encrypt multi-GB values could result in an integer overflow and buffer overflow, as demonstrated by the Fernet class. See: CVE-2020-36242.",
+      "39606",
+      null,
+      null
+    ],
+    [
+      "pyyaml",
+      "<5.4",
+      "5.3.1",
+      "Pyyaml version 5.4 includes a fix for CVE-2020-14343: A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+      "39611",
+      null,
+      null
+    ],
+    [
+      "urllib3",
+      "<1.23",
+      "1.22",
+      "urllib3 before version 1.23 does not remove the Authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the Authorization header to be exposed to unintended hosts or transmitted in cleartext.",
+      "36541",
+      null,
+      null
+    ],
+    [
+      "urllib3",
+      "<1.24.2",
+      "1.22",
+      "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the ssl_context, ca_certs, or ca_certs_dir argument.",
+      "37071",
+      null,
+      null
+    ],
+    [
+      "urllib3",
+      "<1.25.9",
+      "1.22",
+      "urllib3 before 1.25.9 allows CRLF injection if the attacker controls the HTTP request method, as demonstrated by inserting CR and LF control characters in the first argument of putrequest(). NOTE: this is similar to CVE-2020-26116.",
+      "38834",
+      null,
+      null
+    ],
+    [
+      "urllib3",
+      "<=1.24.1",
+      "1.22",
+      "In the urllib3 library through 1.24.1 for Python, CRLF injection is possible if the attacker controls the request parameter.",
+      "37055",
+      null,
+      null
+    ],
+    [
+      "werkzeug",
+      "<2.0.2",
+      "1.0.1",
+      "Werkzeug version 2.0.2 improves the security of the debugger cookies. \"SameSite\" attribute is set to \"Strict\" instead of \"None\", and the secure flag is added when on HTTPS.",
+      "42050",
+      null,
+      null
+    ]
+  ]
+}

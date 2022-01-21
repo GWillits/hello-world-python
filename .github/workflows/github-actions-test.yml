@@ -24,12 +24,17 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      - name: install poetry
-        run: make install-poetry
-      - name: export requirements text
-        run: |
-          make map-requirements
-      - name: python-safety
-        run: make safety-ci safety_action=$action user="$(git log -n 1 --pretty=format:%an)"
-        env:
-          action: PASS
+      # - name: install poetry
+      #   run: make install-poetry
+      # - name: export requirements text
+      #   run: |
+      #     make map-requirements
+      # - name: python-safety
+      #   run: make safety-ci safety_action=$action user="$(git log -n 1 --pretty=format:%an)"
+      #   env:
+      #     action: PASS
+      - name: test
+        run: export FOO=bar
+          echo "::set-env name=FOO::$FOO"
+
+      - run: echo $FOO
