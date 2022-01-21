@@ -35,7 +35,8 @@ jobs:
       #     action: PASS
       - name: test
         run: |
-          ./scripts/test.sh
+          mkdir -p ${{ github.workspace }}/artifacts
+          echo hello > ${{ github.workspace }}/artifacts/world.txt
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v2
