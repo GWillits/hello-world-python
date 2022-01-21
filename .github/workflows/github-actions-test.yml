@@ -34,7 +34,8 @@ jobs:
       #   env:
       #     action: PASS
       - name: test
-        run: export FOO=bar
-          echo "::set-env name=FOO::bar"
+        run: |
+          export FOO=bar
+          echo "$FOO" >> $GITHUB_ENV
 
       - run: echo $FOO
