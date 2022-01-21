@@ -37,7 +37,9 @@ jobs:
         run: |
           ./scripts/test.sh
 
-      - run: echo $testfile
+      - run: |
+          echo $testfile
+          ls
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v2
