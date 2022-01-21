@@ -11,7 +11,7 @@ if [ $(($num_results)) -gt 0 ]; then
     safety check -r requirements.txt --full-report
     # create report
     report_name="insecure_report_${check_date_str}"
-    if  [ ! -z "${workspace}"]; then
+    if  [ ! -z "${workspace}" ]; then
         artifact_path="$workspace/.github-artifacts"
         jq   --null-input --arg DATE "$check_date" --arg USER "$user" --arg EMAIL "$email" '{origin:{usr: $USER,email:$EMAIL,date: $DATE}} ' | jq --argjson report "$(safety check -r requirements.txt --full-report --json)" '. + {report:$report}' > "${artifact_path}/${report_name}.json"
     fi
