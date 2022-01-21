@@ -35,6 +35,6 @@ jobs:
       #     action: PASS
       - name: test
         run: export FOO=bar
-          echo "::set-env name=FOO::$FOO"
+          echo "::set-env name=FOO::bar"
 
       - run: echo $FOO
