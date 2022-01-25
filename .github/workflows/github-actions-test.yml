@@ -29,8 +29,8 @@ jobs:
       - name: install poetry
         run: make install-poetry
 
-      - name: python-safety
-        run: make safety-ci safety_action=$action workspace=${{ github.workspace }}
+      - name: safety-scan
+        run: make safety-ci safety_action=$action workspace=${{ github.workspace }} detail="root-" publish_artifacts=true
         env:
           action: PASS
 
