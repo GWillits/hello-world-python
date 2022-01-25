@@ -9,7 +9,7 @@ install-ci:
 	poetry install --no-dev --remove-untracked
 
 
-map-requirements:
+map-py-requirements:
 	@if [ ! -f requirements.txt  ]; then poetry export -f requirements.txt --output requirements.txt; fi;
 
 safety: map-requirements
