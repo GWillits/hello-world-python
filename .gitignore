@@ -27,6 +27,7 @@ wheels/
 requirements.txt
 poetry.lock
 .github-artifacts
+scanner
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

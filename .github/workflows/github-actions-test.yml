@@ -31,8 +31,6 @@ jobs:
 
       - name: safety-scan
         run: make safety-ci safety_action=$action workspace=${{ github.workspace }} detail="root-" publish_artifacts=true
-        env:
-          action: PASS
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
