@@ -19,7 +19,7 @@ safety-ci: map-py-requirements
 	@pip install safety
 	@./scripts/safety-scan.sh ${action} ${workspace} ${detail} ${publish_artifacts}
 
-safety-ci-lambdas: 
+safety-ci-lambdas: map-py-requirements
 	@pip install safety
 	make -C lambda safety action=${action} publish_artifacts=${publish_artifacts}
 

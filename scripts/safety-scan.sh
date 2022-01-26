@@ -19,7 +19,6 @@ while read -r ignored_package || [[ -n $ignored_package ]]; do
     ((num_ignored ++))
 done <"$workspace/ignored-safety.txt"
 num_results=$(safety check -r requirements.txt $ignores --bare | wc -w)
-echo "FOUND ${fail_action}"
 if [ $num_results -gt 0 ]; then
     echo  "$num_results package vulnerabilities discovered. Failing package scan test. Full report:"
     safety check -r requirements.txt --full-report

@@ -32,6 +32,12 @@ jobs:
       - name: safety-scan
         run: make safety-ci safety_action=$action workspace=${{ github.workspace }} detail="root-" publish_artifacts=true
         env:
+          action: PASS
+
+      - name: safety-scan-lambdas
+        run: make safety-ci-lambdas safety_action=$action workspace=${{ github.workspace }}  publish_artifacts=true
+        env:
+          publish_artifacts: true
           action: FAIL
 
       - name: Upload Artifacts
