@@ -99,9 +99,10 @@ echo:
 	echo $(dirname)
 
 safety:
+	echo "FOUND $$safety_action $$workspace $$detail $$publish_artifacts" \ 
 	@if [ -f pyproject.toml ]; then \
 		poetry export -f requirements.txt --output requirements.txt;  \
-		../../scripts/safety-scan.sh ${safety_action} ${workspace} ${detail} ${publish_artifacts}; \
+		../../scripts/safety-scan.sh $$safety_action $$workspace $$detail $$publish_artifacts; \
 		else \
 			echo "Not python package - skipping"; \
 	fi

@@ -96,11 +96,9 @@ mypy:
 	done;
 	wait;
 
-safety_action := FAIL
-publish_artifacts := false
 safety:
-	@for dir in $(lambdas); do \
+	for dir in $(lambdas); do \
   		echo $$dir; \
-		make --no-print-directory -C  $$dir safety safety_action="$(safety_action)" workspace="../.." detail="[lambda]$$dir" publish_artifacts="$(publish_artifacts)"; \
+		make --no-print-directory -C  $$dir safety safety_action="$safety_action" workspace="../.." detail="[lambda]$$dir" publish_artifacts="$$publish_artifacts"; \
 	done;
 	wait;
