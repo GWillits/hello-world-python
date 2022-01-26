@@ -17,11 +17,11 @@ safety: map-py-requirements
 
 safety-ci: map-py-requirements
 	@pip install safety
-	@./scripts/safety-scan.sh ${safety_action} ${workspace} ${detail} ${publish_artifacts}
+	@./scripts/safety-scan.sh ${action} ${workspace} ${detail} ${publish_artifacts}
 
 safety-ci-lambdas: map-py-requirements
 	@pip install safety
-	@make -C lambda safety safety_action=${safety_action} publish_artifacts=${publish_artifacts}
+	@make -C lambda safety safety_action=${action} publish_artifacts=${publish_artifacts}
 
 install-sonar-cli:
 	if [ ! -f scanner/sonar-scanner.zip  ]; then \
