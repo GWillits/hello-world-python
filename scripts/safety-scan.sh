@@ -34,6 +34,7 @@ if [ $num_results -gt 0 ]; then
     fi
     if [ "$fail_action" = "FAIL" ]
     then
+        echo FAILED
         exit 1
     fi
     else 
